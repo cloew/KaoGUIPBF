@@ -1,11 +1,12 @@
-from pbf.helpers.filename_helper import GetPythonClassnameFromFilename, GetFilenameFromClassname
-from pbf.helpers.Python.python_helper import GetPythonImportString
-
-import sys
-
 from pbf.Commands import command_manager
+
+from pbf.helpers.filename_helper import GetPythonClassnameFromFilename, GetFilenameFromClassname
+from pbf.python.helpers.python_helper import GetPythonImportString
+
 from pbf.templates import template_manager
 from pbf.kao_gui.templates import TemplatesRoot
+
+import sys
 
 class NewConsoleController:
     """ Creates a new Console Controller """
