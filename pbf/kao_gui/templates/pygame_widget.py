@@ -1,4 +1,4 @@
-from kao_gui.pygane.pygame_widget import PygameWidget
+from kao_gui.pygame.pygame_widget import PygameWidget
 
 class %WidgetName%(PygameWidget):
     """ Represents the widget for a *** """
