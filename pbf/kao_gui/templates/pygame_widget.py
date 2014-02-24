@@ -6,5 +6,5 @@ class %WidgetName%(PygameWidget):
     def __init__(self):
         """ Initialize the widget """
         
-    def draw(self):
+    def drawSurface(self):
         """ Draw the Widget """
