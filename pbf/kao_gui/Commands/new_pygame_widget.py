@@ -24,7 +24,7 @@ class NewPygameWidget:
         template_manager.CopyTemplate(widgetFileName, "pygame_widget.py", {"%WidgetName%":widgetName}, TemplatesRoot)
     
     def help(self):
-        """  """
+        """ Print Command usage """
         print "Usage: pbf {category} {command} [path/to/widget]".format(category=self.category, command=self.command)
         print "\tWill create a Pygame Widget at the path given"
     
