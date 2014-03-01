@@ -17,9 +17,9 @@ class NewPygameScreen:
         screenFileName = args[0]
         screenName = GetPythonClassnameFromFilename(screenFileName)
         print "Creating Pygame Screen:", screenName, "at:", screenFileName
-        self.createWidget(screenFileName, screenName)
+        self.createScreen(screenFileName, screenName)
         
-    def createWidget(self, screenFileName, screenName):
+    def createScreen(self, screenFileName, screenName):
         """ Create the widget file """
         template_manager.CopyTemplate(screenFileName, "pygame_screen.py", {"%ScreenName%":screenName}, TemplatesRoot)
     
