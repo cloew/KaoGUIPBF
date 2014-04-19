@@ -1,7 +1,7 @@
 from pbf.Commands import command_manager
 
 from pbf.helpers.filename_helper import GetPythonClassnameFromFilename
-from pbf.python.helpers.python_helper import GetPythonImportString
+from pbf_python.helpers.python_helper import GetPythonImportString
 
 from pbf.templates import template_manager
 from pbf_kao_gui.templates import TemplatesRoot
