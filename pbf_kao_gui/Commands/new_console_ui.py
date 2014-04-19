@@ -4,7 +4,6 @@ from new_console_controller import NewConsoleController
 from new_console_view import NewConsoleView
 
 from pbf.Commands import command_manager
-from pbf.templates import template_manager
 
 class NewConsoleUI:
     """ Creates a new Console Controller & View """

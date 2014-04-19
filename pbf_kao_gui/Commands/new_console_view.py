@@ -2,7 +2,7 @@ from pbf.helpers.filename_helper import GetPythonClassnameFromFilename
 
 from pbf.Commands import command_manager
 from pbf.templates import template_manager
-from pbf.kao_gui.templates import TemplatesRoot
+from pbf_kao_gui.templates import TemplatesRoot
 
 class NewConsoleView:
     """ Creates a new Console View """

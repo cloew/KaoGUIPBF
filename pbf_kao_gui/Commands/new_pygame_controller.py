@@ -4,7 +4,7 @@ from pbf.helpers.filename_helper import GetPythonClassnameFromFilename
 from pbf.python.helpers.python_helper import GetPythonImportString
 
 from pbf.templates import template_manager
-from pbf.kao_gui.templates import TemplatesRoot
+from pbf_kao_gui.templates import TemplatesRoot
 
 class NewPygameController:
     """ Command to Create a new Pygame Controller """

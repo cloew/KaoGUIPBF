@@ -4,8 +4,6 @@ from pbf.helpers.filename_helper import RemoveFileExtension, GetPythonClassnameF
 from new_pygame_controller import NewPygameController
 from new_pygame_screen import NewPygameScreen
 
-from pbf.templates import template_manager
-
 class NewPygameUI:
     """ Creates a new Pygame Controller & Screen """
     category = "new"
