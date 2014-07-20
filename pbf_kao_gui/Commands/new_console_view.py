@@ -9,11 +9,14 @@ class NewConsoleView:
     category = "new"
     command = "cns-view"
     description = "Creates a new Console View"
-    minimumNumberOfArguments = 1
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the new console view')
+    
+    def run(self, arguments):
         """ Create the Console View """
-        viewFileName = args[0]
+        viewFileName = arguments.destination
         viewName = GetPythonClassnameFromFilename(viewFileName)
         print "Creating Console View:", viewName, "at:", viewFileName
         self.createView(viewFileName, viewName)

@@ -9,11 +9,14 @@ class NewPygameUI:
     category = "new"
     command = "pygame-ui"
     description = "Crates a new Pygame UI controller and screen"
-    minimumNumberOfArguments = 1
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the new pygame controller & view')
+    
+    def run(self, arguments):
         """ Run the command """
-        filename = RemoveFileExtension(args[0])
+        filename = RemoveFileExtension(arguments.destination)
         uiName = GetPythonClassnameFromFilename(filename)
         print "Creating Pygame Controller & View:", uiName
         

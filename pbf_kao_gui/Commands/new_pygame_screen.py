@@ -10,11 +10,14 @@ class NewPygameScreen:
     category = "new"
     command = "pygame-screen"
     description = "Creates a new Pygame Screen"
-    minimumNumberOfArguments = 1
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the new pygame screen')
+    
+    def run(self, arguments):
         """ Run the command """
-        screenFileName = args[0]
+        screenFileName = arguments.destination
         screenName = GetPythonClassnameFromFilename(screenFileName)
         print "Creating Pygame Screen:", screenName, "at:", screenFileName
         self.createScreen(screenFileName, screenName)

@@ -10,11 +10,14 @@ class NewConsoleUI:
     category = "new"
     command = "cns-ui"
     description = "Crates a new Console UI controller and view"
-    minimumNumberOfArguments = 1
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the new console controller & view')
+    
+    def run(self, arguments):
         """ ADD LOGIC TO RUN THE PACKAGE HERE """
-        filename = RemoveFileExtension(args[0])
+        filename = RemoveFileExtension(arguments.destination)
         uiName = GetPythonClassnameFromFilename(filename)
         print "Creating Console Controller & View:", uiName
         

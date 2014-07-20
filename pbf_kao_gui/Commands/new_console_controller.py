@@ -11,11 +11,14 @@ class NewConsoleController:
     category = "new"
     command = "cns-ctrl"
     description = "Creates a new Console Controller"
-    minimumNumberOfArguments = 1
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the new console view')
+    
+    def run(self, arguments):
         """ ADD LOGIC TO RUN THE PACKAGE HERE """
-        controllerFileName = args[0]
+        controllerFileName = arguments.destination
         controllerName = GetPythonClassnameFromFilename(controllerFileName)
         print "Creating Console Controller:", controllerName, "at:", controllerFileName
         self.createController(controllerFileName, controllerName)

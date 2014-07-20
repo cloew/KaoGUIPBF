@@ -10,11 +10,14 @@ class NewPygameWidget:
     command = "pygame-widget"
     category = "new"
     description = "Creates a new Pygame Widget"
-    minimumNumberOfArguments = 1
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination of the new widget')
+    
+    def run(self, arguments):
         """ Create the Pygame Widget """
-        widgetFileName = args[0]
+        widgetFileName = arguments.destination
         widgetName = GetPythonClassnameFromFilename(widgetFileName)
         print "Creating Pygame Widget:", widgetName, "at:", widgetFileName
         self.createWidget(widgetFileName, widgetName)

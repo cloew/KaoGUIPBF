@@ -11,11 +11,14 @@ class NewPygameController:
     category = "new"
     command = "pygame-ctrl"
     description = "Creates a new Pygame Controller"
-    minimumNumberOfArguments = 1
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the new pygame controller')
+    
+    def run(self, arguments):
         """ Run the command """
-        controllerFileName = args[0]
+        controllerFileName = arguments.destination
         controllerName = GetPythonClassnameFromFilename(controllerFileName)
         print "Creating Pygame Controller:", controllerName, "at:", controllerFileName
         self.createController(controllerFileName, controllerName)
