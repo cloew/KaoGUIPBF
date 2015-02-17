@@ -1,12 +1,12 @@
-
 from pbf.helpers.filename_helper import GetPythonClassnameFromFilename
 from pbf_python.helpers.python_helper import GetPythonImportString
 
-from pbf.templates import template_manager
+from pbf.templates.template_loader import TemplateLoader
 from pbf_kao_gui.templates import TemplatesRoot
 
 class NewPygameController:
     """ Command to Create a new Pygame Controller """
+    TEMPLATE_LOADER = TemplateLoader("pygame_controller.py", TemplatesRoot)
     
     def addArguments(self, parser):
         """ Add arguments to the parser """
@@ -26,4 +26,4 @@ class NewPygameController:
         keywords = {"%ControllerName%":controllerName,
                     "%ViewName%":viewName,
                     "%ViewImport%":GetPythonImportString(viewFileName, [viewName])}
-        template_manager.CopyTemplate(controllerFileName, "pygame_controller.py", keywords, TemplatesRoot)
+        self.TEMPLATE_LOADER.copy(controllerFileName, keywords=keywords)

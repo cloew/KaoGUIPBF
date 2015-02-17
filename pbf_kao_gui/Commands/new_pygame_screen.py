@@ -1,11 +1,11 @@
-
 from pbf.helpers.filename_helper import GetPythonClassnameFromFilename
 
-from pbf.templates import template_manager
+from pbf.templates.template_loader import TemplateLoader
 from pbf_kao_gui.templates import TemplatesRoot
 
 class NewPygameScreen:
     """ Command to Create a new Pygame Screen """
+    TEMPLATE_LOADER = TemplateLoader("pygame_screen.py", TemplatesRoot)
     
     def addArguments(self, parser):
         """ Add arguments to the parser """
@@ -20,4 +20,4 @@ class NewPygameScreen:
         
     def createScreen(self, screenFileName, screenName):
         """ Create the widget file """
-        template_manager.CopyTemplate(screenFileName, "pygame_screen.py", {"%ScreenName%":screenName}, TemplatesRoot)
+        self.TEMPLATE_LOADER.copy(screenFileName, keywords={"%ScreenName%":screenName})
