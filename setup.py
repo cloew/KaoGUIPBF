@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='pbf_kao_gui',
-      version='.2',
+      version='.3',
       description="Programmer's Best Friend Utility Extension for the KaoGUI Python Library",
       author='Chris Loew',
       author_email='cloew123@gmail.com',

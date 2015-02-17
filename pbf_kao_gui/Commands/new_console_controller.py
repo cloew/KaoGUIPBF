@@ -1,4 +1,3 @@
-from pbf.Commands import command_manager
 
 from pbf.helpers.filename_helper import GetPythonClassnameFromFilename
 from pbf_python.helpers.python_helper import GetPythonImportString
@@ -8,9 +7,6 @@ from pbf_kao_gui.templates import TemplatesRoot
 
 class NewConsoleController:
     """ Creates a new Console Controller """
-    category = "new"
-    command = "cns-ctrl"
-    description = "Creates a new Console Controller"
     
     def addArguments(self, parser):
         """ Add arguments to the parser """
@@ -31,10 +27,3 @@ class NewConsoleController:
                     "%ViewName%":viewName,
                     "%ViewImport%":GetPythonImportString(viewFileName, [viewName])}
         template_manager.CopyTemplate(controllerFileName, "console_controller.py", keywords, TemplatesRoot)
-    
-    def help(self):
-        """  """
-        print "Usage: pbf {category} {command} [path/to/controller]".format(category=self.category, command=self.command)
-        print "\tWill create a Console Controller at the path given"
-    
-command_manager.RegisterCommand(NewConsoleController)
